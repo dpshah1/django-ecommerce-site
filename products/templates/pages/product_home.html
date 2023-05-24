@@ -12,16 +12,28 @@
         .prod_name {
             color: red;
         }
+        .name_text {
+            color:white;
+        }
+
+        .nav-item {
+            padding: 5px;
+        }
+       
     </style>
     
 </head>
     <body>
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="">not eBay 🧑‍💻</a>
-            <a href="../user/logout">Logout</a>
+            <a class="navbar-brand " href="">python-ecommerce 🚀</a>
+            <h5 class="navbar-text nav-item">{{ user.username }}</h5>
+            <a class="nav-item">My Store</a>
+            <a class="nav-item">Purchases</a>
+            <a class="nav-item" href="/user/logout">Logout</a>
+                          
             
-          </nav>
+        </nav>
           
         <h1>Products</h1>
 

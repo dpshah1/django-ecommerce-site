@@ -6,7 +6,8 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def home(request):
     all_entries = Product.objects.all()
-    return render(request, 'pages/product_home.html', {'all_entries' : all_entries})
+    current_user = request.user
+    return render(request, 'pages/product_home.html', {'all_entries' : all_entries, 'user' : current_user})
 
 @login_required
 def product_page(request, product_id):

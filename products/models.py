@@ -12,3 +12,7 @@ class Product(models.Model):
     def __str__(self):
         return str(self.product_name)
     
+class Purchase(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    purchase_date = models.DateTimeField(auto_now_add=True)
+    

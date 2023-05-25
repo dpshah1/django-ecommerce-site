@@ -1,5 +1,6 @@
 from django.db import models
 from stores.models import Store
+from users.models import Customer
 
 # Create your models here.
 class Product(models.Model):
@@ -14,5 +15,5 @@ class Product(models.Model):
     
 class Purchase(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    purchaser = models.ForeignKey(Customer, default=None, on_delete=models.CASCADE)
     purchase_date = models.DateTimeField(auto_now_add=True)
-    

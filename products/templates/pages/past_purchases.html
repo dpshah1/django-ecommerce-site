@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>
+    Past Purchases
+</h1>
+
+<ul>
+    {% for p in purchases %}
+    <li>
+        <h2>{{ p.product }}</h2>
+        <h4>{{ p.purchase_date }}</h4>
+    </li>
+    
+    {% endfor %}
+</ul>
+{% endblock content %}

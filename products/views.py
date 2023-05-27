@@ -24,4 +24,9 @@ def puchase_item(request, product_id):
     print(current_user)
     p = Purchase(product = prod, purchaser = current_user)
     p.save()
-    return render(request, 'pages/product_page.html', {'product' : prod})
+    return redirect(f'/shop/product/{product_id}')
+
+@login_required
+def get_purchases(request):
+    purchases = Purchase.objects.filter(purchaser = Customer.objects.get(user = request.user))
+    return render(request, 'pages/past_purchases.html', {'purchases' : purchases})
